@@ -34,5 +34,9 @@ var app = {
 
         console.log('Received Event: ' + id + window.vdocipher + " !");
 		console.error('Errorrrr');
-    }
+    },
+	startPlaying : function(){
+		console.log("Button clicked...");
+		// cordova.exec() ...
+	}
 };
