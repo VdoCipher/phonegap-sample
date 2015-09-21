@@ -4,6 +4,12 @@ window.console = {
 	},
 };
 window.console.error = window.console.log;
+window.console.warn= window.console.log;
+window.onerror = function(msg, url, line, col, error) {
+	var extra = !col ? '' : '\ncolumn: ' + col;
+	   extra += !error ? '' : '\nerror: ' + error;
+	    window.console.log("Error: " + msg + "\nurl: " + url + "\nline: " + line + extra);
+};
 var app = {
     // Application Constructor
     initialize: function() {
@@ -33,10 +39,12 @@ var app = {
         receivedElement.setAttribute('style', 'display:block;');
 
         console.log('Received Event: ' + id + window.vdocipher + " !");
+        console.log('Received Event: ' + id + window.vdocipher.dummyTest() + " !");
 		console.error('Errorrrr');
     },
 	startPlaying : function(){
 		console.log("Button clicked...");
+		//window.vdocipher.play();
 		// cordova.exec() ...
 	}
 };
